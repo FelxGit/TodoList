@@ -230,5 +230,10 @@ export default {
         border: thin solid green;
         color: green;
     }
+    @media screen and (max-width: 500px){
+        #filter > div{
+            margin-top: 20px;
+        }
+    }
 
 </style>
