@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-Route::post('todos', 'API\TodoListController@add');
+
+Route::group(['middleware' => 'auth:api'], function(){  // or if user has token
+
+    Route::post('todos', 'API\TodoListController@addTodo');
+    Route::get('todos', 'API\TodoListController@index');
+    Route::put('todos/{id}', 'API\TodoListController@updateTodo');
+    Route::delete('todos/{id}', 'API\TodoListController@removeTodo');
+});
