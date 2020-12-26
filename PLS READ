@@ -1,0 +1,5 @@
+Pls run
+1)composer install
+2)npm install
+4)setup env(email,database) then run config:cache
+3)php artisan passport:install(after u run migration)
